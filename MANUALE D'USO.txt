@@ -1,0 +1,72 @@
+CREA SOTTOTITOLI DA UN VIDEO - MANUALE D'USO
+============================================
+
+CHE COSA FA
+-----------
+Trascrive automaticamente il parlato con Whisper small, salva un file SRT
+modificabile e crea una copia MP4 con i sottotitoli incorporati. Non elimina
+pause o silenzi e non modifica il video originale. Non serve un SRT di partenza.
+
+REQUISITI
+---------
+- Windows 10 o 11
+- Python 3.10 o successivo, installato da python.org
+- Connessione Internet al primo avvio del programma e al primo download del
+  modello (circa 500 MB)
+- Spazio libero per il modello e per i file temporanei durante la conversione
+
+INSTALLAZIONE E AVVIO
+---------------------
+1. Scarica la repository con il pulsante Code > Download ZIP ed estrai il file.
+2. Apri la cartella estratta.
+3. Fai doppio clic su Avvia sottotitoli.cmd.
+4. Al primo avvio lo script crea .venv e installa i componenti necessari. Se
+   Windows segnala che Python manca, installa Python 3.10 o successivo da
+   python.org e riprova. Attiva Add python.exe to PATH durante l'installazione.
+5. Trascina un video nella finestra nera (oppure incolla il percorso completo)
+   e premi Invio.
+6. Premi Invio per salvare i risultati accanto al video, oppure inserisci una
+   cartella diversa.
+7. Scegli la lingua: 1 italiano, 2 rilevamento automatico, 3 inglese,
+   4 spagnolo, 5 francese.
+8. Scegli la dimensione dei sottotitoli da 8 a 18. Il valore predefinito 9
+   produce testo compatto.
+9. Attendi che l'avanzamento arrivi al 100%. Premi Invio per chiudere.
+
+AVVIO RAPIDO CON IMPOSTAZIONI PREDEFINITE
+-----------------------------------------
+Trascina il video direttamente sopra Avvia sottotitoli.cmd. Il programma usa
+italiano, dimensione 9 e salva i file accanto al video. Se esistono già
+risultati con lo stesso nome, il programma chiede prima di sovrascriverli.
+
+RISULTATI
+---------
+Nella cartella scelta trovi:
+  NOMEVIDEO_sottotitolato.mp4  video con testo incorporato
+  NOMEVIDEO_sottotitoli.srt    testo e tempi modificabili
+
+Il file MP4 include i sottotitoli nell'immagine, quindi restano visibili con
+qualsiasi lettore. L'audio viene mantenuto e il video viene ricodificato. Il
+file originale resta intatto.
+
+ACCURATEZZA E PRIVACY
+---------------------
+Whisper può sbagliare nomi, sigle, formule e termini tecnici. Apri l'SRT con
+un editor di testo e correggilo prima di distribuire lezioni importanti.
+Audio e video vengono elaborati sul tuo computer; al primo uso viene scaricato
+il modello Whisper small da Hugging Face. Il programma non carica le lezioni
+online.
+
+RISOLUZIONE DEI PROBLEMI
+------------------------
+- Python non trovato: installa Python 3.10+ e riapri il launcher.
+- Errore durante l'installazione: controlla Internet e riprova Avvia
+  sottotitoli.cmd. Non disattivare la verifica dei certificati.
+- Errore durante il download del modello: verifica la connessione e riprova.
+- Nessun parlato rilevato: controlla che il video abbia una traccia audio
+  udibile.
+- Spazio insufficiente: libera spazio nell'unità che contiene video e cartella
+  del programma.
+- Per modificare il testo, apri il file SRT con un editor di testo. Dopo aver
+  corretto l'SRT, per incorporare la correzione nel video occorre rilanciare
+  il programma (che esegue una nuova trascrizione).

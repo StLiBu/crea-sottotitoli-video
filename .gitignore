@@ -1,0 +1,12 @@
+.venv/
+models/
+_cache/
+__pycache__/
+*.py[cod]
+*.mp4
+*.mkv
+*.mov
+*.avi
+*.webm
+*.srt
+*.partial.mp4
